@@ -1,0 +1,98 @@
+{
+  "n_train": 700,
+  "n_test": 300,
+  "selected_features": [
+    "checking_status",
+    "credit_history",
+    "duration_months",
+    "purpose",
+    "savings",
+    "credit_amount",
+    "property",
+    "other_installment_plans",
+    "employment_since",
+    "age",
+    "personal_status_sex",
+    "housing",
+    "installment_rate_pct"
+  ],
+  "iv": {
+    "checking_status": 0.663,
+    "credit_history": 0.3246,
+    "duration_months": 0.2292,
+    "purpose": 0.166,
+    "savings": 0.1285,
+    "credit_amount": 0.0979,
+    "property": 0.0941,
+    "other_installment_plans": 0.092,
+    "employment_since": 0.0774,
+    "age": 0.0617,
+    "personal_status_sex": 0.0475,
+    "housing": 0.0449,
+    "installment_rate_pct": 0.0284,
+    "other_debtors": 0.0136,
+    "job": 0.0037,
+    "existing_credits": 0.0014
+  },
+  "train_auc": 0.8298542274052478,
+  "test_auc": 0.7861375661375661,
+  "cv_auc": 0.7870748299319728,
+  "test_ks": 0.48571428571428577,
+  "test_gini": 0.5722751322751323,
+  "test_brier": 0.16762535459354175,
+  "hl_p_value": 0.05064810984999848,
+  "score_psi": 0.022790200981534673,
+  "cutoff_pd": 0.19642857142857142,
+  "cutoff_score": 527.771305758353,
+  "economics": {
+    "lgd": 0.45,
+    "margin": 0.11,
+    "breakeven_pd": 0.19642857142857142,
+    "at_default_0.50": {
+      "threshold": 0.5,
+      "approval_rate": 0.76,
+      "approved_bad_rate": 0.20614035087719298,
+      "good_rejected": 29,
+      "bad_accepted": 47,
+      "total_profit": -11119.739999999998
+    },
+    "at_cost_optimal": {
+      "threshold": 0.19642857142857142,
+      "approval_rate": 0.42,
+      "approved_bad_rate": 0.1111111111111111,
+      "good_rejected": 98,
+      "bad_accepted": 14,
+      "total_profit": 16247.58
+    },
+    "empirical_best": {
+      "threshold": 0.2987601941219729,
+      "total_profit": 21862.629999999997,
+      "approval_rate": 0.55
+    }
+  },
+  "fairness": [
+    {
+      "group": "female",
+      "n": 92,
+      "approval_rate": 0.32608695652173914,
+      "observed_bad_rate": 0.358695652173913,
+      "approved_bad_rate": 0.13333333333333333,
+      "auc_within_group": 0.7591165896250642
+    },
+    {
+      "group": "male",
+      "n": 208,
+      "approval_rate": 0.46153846153846156,
+      "observed_bad_rate": 0.27403846153846156,
+      "approved_bad_rate": 0.10416666666666667,
+      "auc_within_group": 0.794934355756942
+    }
+  ],
+  "drift": {
+    "feature": "credit_amount",
+    "multiplier": 1.2,
+    "mean_score_before": 517.9237186472425,
+    "mean_score_after": 517.1253447835377,
+    "score_psi": 0.004181908232784807
+  }
+}
